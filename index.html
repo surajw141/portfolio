@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suraj Waghmare | Portfolio</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --card-bg: #1e293b;
+            --text-main: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header & Hero */
+        header {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80');
+            background-size: cover;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .bio {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #94a3b8;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 16px;
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            border-left: 5px solid var(--primary);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        /* Projects Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            border: 1px solid #334155;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .badge-py { background-color: #3776ab; color: white; }
+        .badge-js { background-color: #f7df1e; color: black; }
+        .badge-edu { background-color: #10b981; color: white; }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        .sub-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .sub-list li {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            padding: 2px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .sub-list li::before {
+            content: "▹";
+            color: var(--primary);
+            margin-right: 8px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Academic Section */
+        .academic-card {
+            background: linear-gradient(45deg, #1e293b, #0f172a);
+            border-left: 4px solid var(--badge-edu, #10b981);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid #334155;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://avatars.githubusercontent.com/u/129156643?v=4" alt="Suraj Waghmare" class="profile-img">
+        <h1>Suraj Waghmare</h1>
+        <p class="subtitle">M.Sc. Computer Science Student | Python & JavaScript Developer</p>
+        <p class="bio">
+            Passionate about Scientific Computing, Cloud Technologies, and Cybersecurity. 
+            Focused on consistent coding practices through structured challenges and building practical web applications.
+        </p>
+        <div class="social-links">
+            <a href="https://github.com/surajw141" target="_blank">GitHub Profile</a>
+            <a href="https://linkedin.com/in/surajw7/" target="_blank">LinkedIn</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2 class="section-title">Development Challenges & Projects</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <span class="badge badge-py">Python • DSA</span>
+                    <h3>50 Days DSA Challenge</h3>
+                    <p>A structured 50-day journey mastering Data Structures and Algorithms in Python. Includes solutions to interview questions from Google, Meta, and Amazon.</p>
+                    <ul class="sub-list">
+                        <li>Dynamic Programming & Backtracking</li>
+                        <li>Arrays, Linked Lists, Trees, Graphs</li>
+                        <li>Big-O Complexity Analysis</li>
+                    </ul>
+                    <a href="https://github.com/surajw141/50-Days-DSA-Python-LeetCode-Structured-Approach" class="btn" target="_blank">View Repository</a>
+                </div>
+
+                <div class="card">
+                    <span class="badge badge-js">JavaScript • Frontend</span>
+                    <h3>20 JavaScript Projects</h3>
+                    <p>A "20 Projects in 20 Days" challenge to master DOM manipulation and vanilla JavaScript logic.</p>
+                    <ul class="sub-list">
+                        <li>Stopwatch & Timer Apps</li>
+                        <li>Expense Tracker</li>
+                        <li>Loan & BMI Calculators</li>
+                        <li>Random Password Generator</li>
+                    </ul>
+                    <a href="https://github.com/surajw141/javascript-projects-20-days" class="btn" target="_blank">View Repository</a>
+                </div>
+
+                <div class="card">
+                    <span class="badge badge-js">HTML/CSS • JS</span>
+                    <h3>23 Web Components</h3>
+                    <p>A collection of 23 interactive front-end components focusing on UI/UX and core web development concepts.</p>
+                    <ul class="sub-list">
+                        <li>Speech to Text Application</li>
+                        <li>Virtual Piano</li>
+                        <li>Robot Joke Generator</li>
+                        <li>HSL Color Generator</li>
+                    </ul>
+                    <a href="https://github.com/surajw141/23-javascript-projects" class="btn" target="_blank">View Repository</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Academic Journey</h2>
+            <div class="card academic-card">
+                <span class="badge badge-edu">M.Sc. Computer Science (2023-25)</span>
+                <h3>Scientific Computing Archive</h3>
+                <p>This repository serves as a personal archive of my Master's degree coursework, labs, and research practices. It documents my growth in advanced computer science topics.</p>
+                <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
+                    <div>
+                        <strong>Key Topics:</strong>
+                        <ul class="sub-list">
+                            <li>Scientific Computing (Python)</li>
+                            <li>Optimization Techniques</li>
+                            <li>Applied Cryptography</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Labs & Tech:</strong>
+                        <ul class="sub-list">
+                            <li>Parallel Computing</li>
+                            <li>Network Socket Programming</li>
+                            <li>C++ and Jupyter Notebooks</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="https://github.com/surajw141/Suraj-msc-sc-2023-25" class="btn" target="_blank" style="background-color: #059669;">View Academic Repo</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Suraj Waghmare. Hosted on GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>

@@ -9,9 +9,9 @@
             --primary: #2563eb;
             --dark: #0f172a;
             --light: #f8fafc;
-            --gray: #64748b;
             --card-bg: #1e293b;
             --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
         }
 
         * {
@@ -29,7 +29,7 @@
 
         /* Header & Hero */
         header {
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80');
+            background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80');
             background-size: cover;
             padding: 4rem 2rem;
             text-align: center;
@@ -59,21 +59,40 @@
         .bio {
             max-width: 600px;
             margin: 0 auto 2rem;
-            color: #94a3b8;
+            color: var(--text-muted);
         }
 
-        .social-links a {
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
             color: #fff;
             text-decoration: none;
-            margin: 0 10px;
             padding: 8px 16px;
             border: 1px solid var(--primary);
             border-radius: 20px;
             transition: all 0.3s;
+            display: inline-block;
         }
 
-        .social-links a:hover {
+        .social-btn:hover {
             background-color: var(--primary);
+        }
+
+        .btn-resume {
+            background-color: white;
+            color: var(--primary);
+            border-color: white;
+            font-weight: bold;
+        }
+        
+        .btn-resume:hover {
+            background-color: #e2e8f0;
+            color: #1e40af;
         }
 
         /* Container */
@@ -108,6 +127,9 @@
             padding: 1.5rem;
             transition: transform 0.3s ease;
             border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
@@ -118,47 +140,38 @@
         .card h3 {
             color: #fff;
             margin-bottom: 0.5rem;
+            font-size: 1.25rem;
         }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .badge-py { background-color: #3776ab; color: white; }
-        .badge-js { background-color: #f7df1e; color: black; }
-        .badge-edu { background-color: #10b981; color: white; }
 
         .card p {
             font-size: 0.95rem;
             color: #cbd5e1;
             margin-bottom: 1rem;
+            flex-grow: 1;
         }
 
-        .sub-list {
-            list-style: none;
-            margin-bottom: 1.5rem;
+        .repo-stats {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
         }
 
-        .sub-list li {
-            font-size: 0.9rem;
-            color: #94a3b8;
-            padding: 2px 0;
+        .stat-item {
             display: flex;
             align-items: center;
+            gap: 5px;
         }
 
-        .sub-list li::before {
-            content: "▹";
-            color: var(--primary);
-            margin-right: 8px;
+        .language-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
         }
 
-        .btn {
+        .btn-card {
             display: inline-block;
             background-color: var(--primary);
             color: white;
@@ -166,22 +179,25 @@
             padding: 8px 16px;
             border-radius: 6px;
             font-size: 0.9rem;
+            text-align: center;
         }
 
-        .btn:hover {
+        .btn-card:hover {
             background-color: #1d4ed8;
         }
 
-        /* Academic Section */
-        .academic-card {
-            background: linear-gradient(45deg, #1e293b, #0f172a);
-            border-left: 4px solid var(--badge-edu, #10b981);
+        /* Loading State */
+        .loading {
+            text-align: center;
+            color: var(--text-muted);
+            grid-column: 1 / -1;
+            padding: 2rem;
         }
 
         footer {
             text-align: center;
             padding: 2rem;
-            color: #64748b;
+            color: var(--text-muted);
             font-size: 0.9rem;
             border-top: 1px solid #334155;
         }
@@ -192,98 +208,109 @@
     <header>
         <img src="https://avatars.githubusercontent.com/u/129156643?v=4" alt="Suraj Waghmare" class="profile-img">
         <h1>Suraj Waghmare</h1>
-        <p class="subtitle">M.Sc. Scientific Computing Student | Python & JavaScript Developer</p>
+        <p class="subtitle">M.Sc. Computer Science Student | Software Engineer</p>
         <p class="bio">
             Passionate about Scientific Computing, Cloud Technologies, and Cybersecurity. 
-            Focused on consistent coding practices through structured challenges and building practical web applications.
+            Building scalable solutions with Python and JavaScript.
         </p>
         <div class="social-links">
-            <a href="https://github.com/surajw141" target="_blank">GitHub Profile</a>
-            <a href="https://linkedin.com/in/surajw7/" target="_blank">LinkedIn</a>
-            <a href="Suraj-Waghmare-Software-Engineer-Resume.pdf" target="_blank" style="background-color: #ffffff; color: #2563eb; font-weight: bold;">Resume</a>
+            <a href="https://github.com/surajw141" target="_blank" class="social-btn">GitHub</a>
+            <a href="https://linkedin.com/in/surajw7/" target="_blank" class="social-btn">LinkedIn</a>
+            <a href="Suraj-Waghmare-Software-Engineer-Resume.pdf" target="_blank" class="social-btn btn-resume">Resume</a>
         </div>
     </header>
 
     <div class="container">
         
         <section>
-            <h2 class="section-title">Development Challenges & Projects</h2>
-            <div class="grid">
-                
-                <div class="card">
-                    <span class="badge badge-py">Python • DSA</span>
-                    <h3>50 Days DSA Challenge</h3>
-                    <p>A structured 50-day journey mastering Data Structures and Algorithms in Python. Includes solutions to interview questions from Google, Meta, and Amazon.</p>
-                    <ul class="sub-list">
-                        <li>Dynamic Programming & Backtracking</li>
-                        <li>Arrays, Linked Lists, Trees, Graphs</li>
-                        <li>Big-O Complexity Analysis</li>
-                    </ul>
-                    <a href="https://github.com/surajw141/50-Days-DSA-Python-LeetCode-Structured-Approach" class="btn" target="_blank">View Repository</a>
-                </div>
-
-                <div class="card">
-                    <span class="badge badge-js">JavaScript • Frontend</span>
-                    <h3>20 JavaScript Projects</h3>
-                    <p>A "20 Projects in 20 Days" challenge to master DOM manipulation and vanilla JavaScript logic.</p>
-                    <ul class="sub-list">
-                        <li>Stopwatch & Timer Apps</li>
-                        <li>Expense Tracker</li>
-                        <li>Loan & BMI Calculators</li>
-                        <li>Random Password Generator</li>
-                    </ul>
-                    <a href="https://surajw141.github.io/javascript-projects-20-days/" class="btn" target="_blank">View Repository</a>
-                </div>
-
-                <div class="card">
-                    <span class="badge badge-js">HTML/CSS • JS</span>
-                    <h3>23 Web Components</h3>
-                    <p>A collection of 23 interactive front-end components focusing on UI/UX and core web development concepts.</p>
-                    <ul class="sub-list">
-                        <li>Speech to Text Application</li>
-                        <li>Virtual Piano</li>
-                        <li>Robot Joke Generator</li>
-                        <li>HSL Color Generator</li>
-                    </ul>
-                    <a href="https://surajw141.github.io/23-javascript-projects/" class="btn" target="_blank">View Repository</a>
-                </div>
-
+            <h2 class="section-title">Featured Projects</h2>
+            <div id="projects-grid" class="grid">
+                <div class="loading">Loading projects from GitHub...</div>
             </div>
         </section>
 
         <section>
             <h2 class="section-title">Academic Journey</h2>
-            <div class="card academic-card">
-                <span class="badge badge-edu">M.Sc. Scientific Computing (2023-25)</span>
-                <h3>Scientific Computing Archive</h3>
-                <p>This repository serves as a personal archive of my Master's degree coursework, labs, and research practices. It documents my growth in advanced computer science topics.</p>
-                <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
-                    <div>
-                        <strong>Key Topics:</strong>
-                        <ul class="sub-list">
-                            <li>Scientific Computing (Python)</li>
-                            <li>Optimization Techniques</li>
-                            <li>Applied Cryptography</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <strong>Labs & Tech:</strong>
-                        <ul class="sub-list">
-                            <li>Parallel Computing</li>
-                            <li>Network Socket Programming</li>
-                            <li>C++ and Jupyter Notebooks</li>
-                        </ul>
-                    </div>
+            <div class="card" style="border-left: 4px solid #10b981;">
+                <h3>🎓 M.Sc. Scientific Computing Archive</h3>
+                <p>A comprehensive archive of my Master's coursework (2023-25). Includes Python optimization, Applied Cryptography, Parallel Computing labs, and research practices.</p>
+                <div class="repo-stats">
+                    <span class="stat-item"><span class="language-dot" style="background-color: #3572A5;"></span> Python</span>
+                    <span class="stat-item">Scientific Computing</span>
                 </div>
-                <a href="https://github.com/surajw141/Suraj-msc-sc-2023-25" class="btn" target="_blank" style="background-color: #059669;">View Academic Repo</a>
+                <a href="https://github.com/surajw141/Suraj-msc-sc-2023-25" class="btn-card" target="_blank">View Academic Repo</a>
             </div>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2025 Suraj Waghmare. Hosted on GitHub Pages.</p>
+        <p>&copy; 2025 Suraj Waghmare. Powered by GitHub API.</p>
     </footer>
+
+    <script>
+        // List of specific repositories you want to show
+        const repoNames = [
+            "50-Days-DSA-Python-LeetCode-Structured-Approach",
+            "javascript-projects-20-days",
+            "23-javascript-projects"
+        ];
+
+        const username = "surajw141";
+        const projectsGrid = document.getElementById('projects-grid');
+
+        async function fetchRepos() {
+            try {
+                // Fetch all public repos for the user
+                const response = await fetch(`https://api.github.com/users/${username}/repos`);
+                const allRepos = await response.json();
+
+                // Clear loading text
+                projectsGrid.innerHTML = "";
+
+                // Filter to find only the ones in our list
+                const filteredRepos = allRepos.filter(repo => repoNames.includes(repo.name));
+
+                // Sort them to match the order in 'repoNames' list
+                filteredRepos.sort((a, b) => repoNames.indexOf(a.name) - repoNames.indexOf(b.name));
+
+                filteredRepos.forEach(repo => {
+                    // Create Card HTML
+                    const card = document.createElement('div');
+                    card.className = 'card';
+
+                    // Determine language color
+                    let langColor = '#ccc';
+                    if (repo.language === 'Python') langColor = '#3572A5';
+                    if (repo.language === 'JavaScript') langColor = '#f1e05a';
+                    if (repo.language === 'HTML') langColor = '#e34c26';
+
+                    card.innerHTML = `
+                        <div>
+                            <h3>${repo.name.replace(/-/g, " ")}</h3>
+                            <p>${repo.description || "No description available."}</p>
+                            <div class="repo-stats">
+                                <span class="stat-item">
+                                    <span class="language-dot" style="background-color: ${langColor};"></span>
+                                    ${repo.language || 'Code'}
+                                </span>
+                                <span class="stat-item">★ ${repo.stargazers_count} Stars</span>
+                            </div>
+                        </div>
+                        <a href="${repo.html_url}" target="_blank" class="btn-card">View Source</a>
+                    `;
+                    projectsGrid.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error("Error fetching repos:", error);
+                projectsGrid.innerHTML = "<p>Failed to load projects. Please refresh.</p>";
+            }
+        }
+
+        // Run the function
+        fetchRepos();
+    </script>
 
 </body>
 </html>
